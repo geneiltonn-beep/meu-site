@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 120%;
+    background-color: #0e0c01;
+    color: #e7de8e;
+    line-height: 1.5;
+}
+
+/* Header styling */
+header {
+    background-color: #0e0c01;
+    color: #e7de8e;
+    padding: 10px 0;
+}
+
+header .container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* Style for the scrollable menu */
+.scrollmenu {
+    overflow-x: auto; /* Allows horizontal scrolling */
+    white-space: nowrap; /* Prevents the items from wrapping to the next line */
+    background-color: #e7de8e; /* Dark background for the menu */
+    padding: 10px 0; /* Adds some space around the menu */
+    margin: 20px 0; /* Adds some space above and below the menu */
+    border-radius: 32px;
+}
+
+/* Style for the links inside the scrollmenu */
+.scrollmenu a {
+    display: inline-block; /* Make the links inline */
+    padding: 12px 20px; /* Space around the text inside each link */
+    text-decoration: none; /* Remove underline from the links */
+    color: rgb(11, 20, 32); /* White text color */
+    font-size: 1.1rem; /* Slightly larger font */
+    text-align: center; /* Center the text inside the link */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+}
+
+/* Hover effect for the links */
+.scrollmenu a:hover {
+    background-color: #e7e6d8; /* Darker background color on hover */
+    border-radius: 5px; /* Adds rounded corners */
+}
+
+/* Content Section styling */
+.content {
+    padding: 20px 0;
+}
+
+.content .container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.imageProfile {
+    width: 250px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20%;
+}
+
+/* Footer styling */
+footer {
+    align-self: flex-end;
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer .container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+}
+{i}
