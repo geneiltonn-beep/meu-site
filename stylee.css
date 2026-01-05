@@ -1,96 +1,81 @@
-/* RESET BÁSICO */
+/* Mantenha as configurações de Reset e Body que você já tem */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ESTILO DO CORPO - ALTO CONTRASTE */
 body {
     font-family: Arial, sans-serif;
     font-size: 120%;
     background-color: #0e0c01;
     color: #e7de8e;
     line-height: 1.6;
-    /* Adiciona margem à esquerda para o texto não ficar sob o menu lateral em telas grandes */
+    /* Espaço para o menu lateral no Desktop */
     padding-left: 220px; 
 }
 
-/* CONTAINER CENTRAL */
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-}
-
-/* MENU LATERAL FIXO */
+/* --- MENU LATERAL (DESKTOP) --- */
 .sidebar-menu {
-    position: fixed; /* MANTÉM FIXO NA TELA */
+    position: fixed;
     left: 20px;
     top: 50%;
-    transform: translateY(-50%); /* Centraliza verticalmente */
-    
-    background-color: #e7de8e !important; /* Cor amarela */
+    transform: translateY(-50%);
+    background-color: #e7de8e !important;
     display: flex;
     flex-direction: column;
     padding: 15px;
     border-radius: 15px;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
     z-index: 2000;
     min-width: 180px;
 }
 
-.menu-header {
-    color: #0e0c01;
-    font-weight: 900;
-    text-align: center;
-    padding: 10px;
-    border-bottom: 2px solid #0e0c01;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-}
-
-/* LINKS DO MENU (CORRIGINDO O AZUL) */
 .sidebar-menu a {
-    text-decoration: none !important; /* Remove sublinhado */
-    color: #0e0c01 !important;        /* Força letra preta */
+    text-decoration: none !important;
+    color: #0e0c01 !important;
     font-weight: bold;
     padding: 15px;
     margin: 5px 0;
     border-radius: 10px;
-    text-align: left;
     display: block;
     transition: 0.3s;
 }
 
-/* EFEITO AO PASSAR O MOUSE */
-.sidebar-menu a:hover,
-.sidebar-menu a:focus {
-    background-color: #0e0c01 !important; /* Fundo preto */
-    color: #e7de8e !important;           /* Letra amarela */
+.sidebar-menu a:hover {
+    background-color: #0e0c01 !important;
+    color: #e7de8e !important;
 }
 
-/* RESPONSIVIDADE PARA CELULAR (O MENU SOBE PARA O TOPO) */
+/* --- AJUSTE PARA CELULAR (MENU FIXO NO TOPO) --- */
 @media (max-width: 1100px) {
     body {
-        padding-left: 0; /* Remove a margem lateral no celular */
+        padding-left: 0; /* Remove a margem lateral */
+        padding-top: 70px; /* Cria espaço no topo para o menu não cobrir o texto */
     }
 
     .sidebar-menu {
-        position: relative; /* Deixa de ser fixo na lateral */
+        position: fixed; /* Fixa o menu */
         left: 0;
         top: 0;
-        transform: none;
-        flex-direction: row;
+        transform: none; /* Remove a centralização vertical */
+        flex-direction: row; /* Coloca os links lado a lado */
         justify-content: center;
-        margin: 20px auto;
-        max-width: 95%;
-        flex-wrap: wrap;
+        width: 100%; /* Ocupa a largura toda */
+        margin: 0;
+        border-radius: 0; /* Tira as bordas arredondadas para encaixar no topo */
+        min-width: 100%;
+        padding: 10px 0;
     }
     
+    .sidebar-menu a {
+        padding: 10px 15px;
+        margin: 0 5px;
+        font-size: 1rem; /* Diminui um pouco a letra para caber lado a lado */
+    }
+
     .menu-header { display: none; }
 }
+
 
 
 
