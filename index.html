@@ -63,6 +63,7 @@
   <a href="#inicio">Início</a>
   <a href="#baixa-visao">Baixa visão</a>
   <a href="#manual">Manual</a>
+  <button onclick="lerSite()" class="btn-leitura">🔊 Ouvir Texto</button>
 </nav>
   </header>
 
@@ -143,9 +144,34 @@
       <p style="margin-top:20px;">&copy; 2025 IFRN.</p>
     </div>
   </footer>
+  <script>
+      function lerSite() {
+        // Cancela leituras em andamento para não sobrepor vozes
+        window.speechSynthesis.cancel();
+
+        // Seleciona os títulos e parágrafos das seções de conteúdo
+        const elementos = document.querySelectorAll('h1, h2, .texto-secao p');
+        let textoParaLer = "";
+
+        elementos.forEach(el => {
+          textoParaLer += el.innerText + ". ";
+        });
+
+        if (textoParaLer.trim() !== "") {
+          const mensagem = new SpeechSynthesisUtterance(textoParaLer);
+          mensagem.lang = 'pt-BR'; // Define o idioma para Português
+          mensagem.rate = 1.1;     // Velocidade da fala
+          
+          window.speechSynthesis.speak(mensagem);
+        }
+      }
+    </script>
+
+  </body> </html>
 
 </body>
 </html>
+
 
 
 
