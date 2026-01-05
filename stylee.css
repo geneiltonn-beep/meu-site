@@ -1,20 +1,22 @@
-/* Reset básico */
+/* RESET BÁSICO */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilização do Body - Foco em Baixa Visão */
+/* ESTILO DO CORPO - ALTO CONTRASTE */
 body {
     font-family: Arial, sans-serif;
-    font-size: 120%; /* Texto naturalmente maior */
+    font-size: 120%;
     background-color: #0e0c01;
     color: #e7de8e;
-    line-height: 1.6; /* Aumentado para 1.6 para evitar confusão entre linhas */
+    line-height: 1.6;
+    /* Adiciona margem à esquerda para o texto não ficar sob o menu lateral em telas grandes */
+    padding-left: 220px; 
 }
 
-/* Container centralizador */
+/* CONTAINER CENTRAL */
 .container {
     max-width: 900px;
     margin: 0 auto;
@@ -22,40 +24,17 @@ body {
     text-align: center;
 }
 
-/* Header */
-header {
-    background-color: #0e0c01;
-    padding: 10px 0;
-}
-
-h1 {
-    font-size: 2.2rem;
-    margin: 20px 0;
-    color: #e7de8e;
-    text-transform: uppercase;
-}
-
-h2 {
-    font-size: 1.8rem;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #e7de8e;
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-/* MENU ACESSÍVEL */
-/* Configuração do Menu Lateral */
+/* MENU LATERAL FIXO */
 .sidebar-menu {
-    position: fixed; /* Fica sempre visível */
+    position: fixed; /* MANTÉM FIXO NA TELA */
     left: 20px;
     top: 50%;
-    transform: translateY(-50%); /* Centraliza verticalmente na tela */
+    transform: translateY(-50%); /* Centraliza verticalmente */
     
-    background-color: #e7de8e; /* Cor amarela do seu tema */
+    background-color: #e7de8e !important; /* Cor amarela */
     display: flex;
-    flex-direction: column; /* Itens um embaixo do outro */
-    padding: 10px;
+    flex-direction: column;
+    padding: 15px;
     border-radius: 15px;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
     z-index: 2000;
@@ -69,44 +48,50 @@ h2 {
     padding: 10px;
     border-bottom: 2px solid #0e0c01;
     margin-bottom: 10px;
+    font-size: 1.2rem;
 }
 
-/* Links do Menu Lateral */
+/* LINKS DO MENU (CORRIGINDO O AZUL) */
 .sidebar-menu a {
-    text-decoration: none !important;
-    color: #0e0c01 !important; /* Letras pretas */
+    text-decoration: none !important; /* Remove sublinhado */
+    color: #0e0c01 !important;        /* Força letra preta */
     font-weight: bold;
     padding: 15px;
     margin: 5px 0;
     border-radius: 10px;
     text-align: left;
-    transition: 0.3s;
     display: block;
+    transition: 0.3s;
 }
 
-/* Hover: Inverte as cores para destacar */
+/* EFEITO AO PASSAR O MOUSE */
 .sidebar-menu a:hover,
 .sidebar-menu a:focus {
-    background-color: #0e0c01 !important;
-    color: #e7de8e !important;
-    outline: none;
+    background-color: #0e0c01 !important; /* Fundo preto */
+    color: #e7de8e !important;           /* Letra amarela */
 }
 
-/* Ajuste para Celular (vira um menu de topo novamente) */
+/* RESPONSIVIDADE PARA CELULAR (O MENU SOBE PARA O TOPO) */
 @media (max-width: 1100px) {
+    body {
+        padding-left: 0; /* Remove a margem lateral no celular */
+    }
+
     .sidebar-menu {
-        position: relative;
+        position: relative; /* Deixa de ser fixo na lateral */
         left: 0;
         top: 0;
         transform: none;
         flex-direction: row;
         justify-content: center;
         margin: 20px auto;
-        max-width: 90%;
+        max-width: 95%;
+        flex-wrap: wrap;
     }
     
-    .menu-header { display: none; } /* Esconde a palavra MENU no celular */
+    .menu-header { display: none; }
 }
+
 
 
 
