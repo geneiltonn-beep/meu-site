@@ -1,9 +1,32 @@
-/* ===== MENU LATERAL (DESKTOP) ===== */
+/* ================= RESET ================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* ================= BODY ================= */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0e0c01;
+  color: #e7de8e;
+  line-height: 1.6;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ================= HEADER ================= */
+header {
+  background-color: #0e0c01;
+}
+
+/* ================= MENU LATERAL (DESKTOP) ================= */
 .sidebar-menu {
   position: fixed;
   top: 0;
@@ -12,7 +35,6 @@
   height: 100vh;
   background-color: #222;
   padding: 20px;
-  box-sizing: border-box;
   z-index: 1000;
 }
 
@@ -27,51 +49,33 @@
   color: #fff;
   text-decoration: none;
   margin: 10px 0;
+  font-size: 1rem;
 }
 
 .sidebar-menu a:hover {
   text-decoration: underline;
 }
 
-/* Empurra o conteúdo para o lado no desktop */
+/* ================= CONTEÚDO ================= */
 .content {
   margin-left: 220px;
   padding-top: 20px;
 }
 
-/* ===== 📱 MENU PARA CELULAR ===== */
-@media (max-width: 768px) {
-
-  .sidebar-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-
-    display: flex;
-    align-items: center;
-    gap: 15px;
-
-    padding: 10px;
-    background-color: #222;
-    overflow-x: auto;
-  }
-
-  .sidebar-menu .menu-header {
-    display: none; /* esconde o texto MENU no celular */
-  }
-
-  .sidebar-menu a {
-    white-space: nowrap;
-    margin: 0;
-    padding: 8px 12px;
-  }
-
-  /* Conteúdo desce para não ficar embaixo do menu */
-  .content {
-    margin-left: 0;
-    padding-top: 70px;
-  }
+h1, h2 {
+  margin-bottom: 20px;
+  text-align: center;
 }
 
+/* ================= TEXTO ================= */
+.texto-secao {
+  text-align: justify;
+  margin-bottom: 1.5em;
+  font-size: 1.1rem;
+}
+
+/* ================= IMAGENS DO MANUAL ================= */
+.manual-imagens img {
+  width: 80%;
+  margin-bottom: 15px;
+  border: 1px
