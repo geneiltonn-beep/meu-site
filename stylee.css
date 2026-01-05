@@ -1,4 +1,9 @@
 /* ===== MENU LATERAL (DESKTOP) ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .sidebar-menu {
   position: fixed;
   top: 0;
@@ -69,3 +74,4 @@
     padding-top: 70px;
   }
 }
+
