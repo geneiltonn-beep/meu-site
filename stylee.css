@@ -1,108 +1,71 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ===== MENU LATERAL (DESKTOP) ===== */
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: #222;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 1000;
 }
 
-/* Body styling */
-body {
-    font-family: Arial, sans-serif;
-    font-size: 120%;
-    background-color: #0e0c01;
-    color: #e7de8e;
-    line-height: 1.5;
+.sidebar-menu .menu-header {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
-/* Header styling */
-header {
-    background-color: #0e0c01;
-    color: #e7de8e;
-    padding: 10px 0;
+.sidebar-menu a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin: 10px 0;
 }
 
-header .container {
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
+.sidebar-menu a:hover {
+  text-decoration: underline;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin: 0;
-}
-
-/* Style for the scrollable menu */
-.scrollmenu {
-    overflow-x: auto; /* Allows horizontal scrolling */
-    white-space: nowrap; /* Prevents the items from wrapping to the next line */
-    background-color: #e7de8e; /* Dark background for the menu */
-    padding: 10px 0; /* Adds some space around the menu */
-    margin: 20px 0; /* Adds some space above and below the menu */
-    border-radius: 32px;
-}
-
-/* Style for the links inside the scrollmenu */
-.scrollmenu a {
-    display: inline-block; /* Make the links inline */
-    padding: 12px 20px; /* Space around the text inside each link */
-    text-decoration: none; /* Remove underline from the links */
-    color: rgb(11, 20, 32); /* White text color */
-    font-size: 1.1rem; /* Slightly larger font */
-    text-align: center; /* Center the text inside the link */
-    transition: background-color 0.3s ease; /* Smooth transition for background color change */
-}
-
-/* Hover effect for the links */
-.scrollmenu a:hover {
-    background-color: #e7e6d8; /* Darker background color on hover */
-    border-radius: 5px; /* Adds rounded corners */
-}
-
-/* Content Section styling */
+/* Empurra o conteúdo para o lado no desktop */
 .content {
-    padding: 20px 0;
+  margin-left: 220px;
+  padding-top: 20px;
 }
 
-.content .container {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.content p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-}
-
-.imageProfile {
-    width: 250px;
-    height: auto;
-    object-fit: contain;
-    border-radius: 20%;
-}
-
-/* Footer styling */
-footer {
-    align-self: flex-end;
-    background-color: #333;
-    color: rgb(255, 255, 255);
-    padding: 10px 0;
-    text-align: center;
-}
-
-footer .container {
-    width: 90%;
-    margin: 0 auto;
-}
-
-/* Mobile responsiveness */
+/* ===== 📱 MENU PARA CELULAR ===== */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8rem;
-    }
 
-    .content p {
-        font-size: 1rem;
-    }
+  .sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 10px;
+    background-color: #222;
+    overflow-x: auto;
+  }
+
+  .sidebar-menu .menu-header {
+    display: none; /* esconde o texto MENU no celular */
+  }
+
+  .sidebar-menu a {
+    white-space: nowrap;
+    margin: 0;
+    padding: 8px 12px;
+  }
+
+  /* Conteúdo desce para não ficar embaixo do menu */
+  .content {
+    margin-left: 0;
+    padding-top: 70px;
+  }
 }
-
