@@ -42,18 +42,15 @@ header h1 {
 }
 
 /* Style for the links inside the scrollmenu */
-.scrollmenu {
-    position: fixed;        /* deixa o menu fixo */
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-    background-color: #e7de8e;
-    padding: 10px 0;
-    z-index: 1000;          /* garante que fique acima do conteúdo */
+.scrollmenu a {
+    display: inline-block; /* Make the links inline */
+    padding: 12px 20px; /* Space around the text inside each link */
+    text-decoration: none; /* Remove underline from the links */
+    color: rgb(11, 20, 32); /* White text color */
+    font-size: 1.1rem; /* Slightly larger font */
+    text-align: center; /* Center the text inside the link */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
 }
-
 
 /* Hover effect for the links */
 .scrollmenu a:hover {
@@ -84,8 +81,6 @@ header h1 {
     border-radius: 20%;
 }
 
-
-
 /* Footer styling */
 footer {
     align-self: flex-end;
@@ -110,11 +105,4 @@ footer .container {
         font-size: 1rem;
     }
 }
-
-
-
-
-
-
-
 
