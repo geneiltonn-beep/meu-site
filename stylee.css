@@ -79,3 +79,45 @@ h1, h2 {
   width: 80%;
   margin-bottom: 15px;
   border: 1px
+}
+@media (max-width: 768px) {
+
+  /* MENU FIXO NO TOPO (CELULAR) */
+  .sidebar-menu {
+    position: fixed;        /* continua FIXO */
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 10px;
+    background-color: #222;
+
+    overflow-x: auto;       /* permite rolar para o lado */
+    white-space: nowrap;
+  }
+
+  .sidebar-menu .menu-header {
+    display: none;
+  }
+
+  .sidebar-menu a {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0;
+    padding: 8px 12px;
+  }
+
+  /* CONTEÚDO DESCE PARA NÃO FICAR ESCONDIDO */
+  .content {
+    margin-left: 0;
+    padding-top: 80px;      /* espaço do menu fixo */
+  }
+}
+
+
